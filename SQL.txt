@@ -1,0 +1,92 @@
+CREATE TABLE Block (
+Floor NUMBER(10) NOT NULL,
+Code NUMBER(10) NOT NULL,
+CONSTRAINT PK_Floor PRIMARY KEY(Floor,Code)); 
+
+CREATE TABLE Room (
+Room NUMBER(3) NOT NULL,
+Type VARCHAR(10) NOT NULL,
+Floor NUMBER(10) NOT NULL,
+Code NUMBER(10) NOT NULL,
+CONSTRAINT PK_Number PRIMARY KEY(Room),
+FOREIGN KEY(Floor,Code) REFERENCES Block);
+
+CREATE TABLE Patient (
+PatientID NUMBER (10)  NOT NULL,
+Name VARCHAR(30) NOT NULL,
+Address VARCHAR(30) NOT NULL,
+Phone  VARCHAR (20) NOT NULL,
+CONSTRAINT PK_PatientID PRIMARY KEY (PatientID));
+
+CREATE TABLE Stay (
+Patient NUMBER(10) NOT NULL,
+Room NUMBER(3) NOT NULL,
+CheckIN DATE NOT NULL,
+CheckOut DATE NOT NULL,
+FOREIGN KEY(Patient) REFERENCES Patient,
+FOREIGN KEY(Room) REFERENCES Room);
+
+CREATE TABLE Doctor (
+EmployeeID NUMBER(10) NOT NULL,
+Name VARCHAR(50) NOT NULL,
+Position VARCHAR(60) NOT NULL,
+CONSTRAINT PK_EmployeeID PRIMARY KEY(EmployeeID)); 
+
+CREATE TABLE Department (
+EmployeeID NUMBER(10) PRIMARY KEY NOT NULL,
+Name VARCHAR(50) NOT NULL,
+Doctors NUMBER(10) NOT NULL,
+FOREIGN KEY(EmployeeID) REFERENCES Doctor);
+
+CREATE TABLE Nurse (
+EmployeeID NUMBER (10)  NOT NULL,
+Name VARCHAR(60) NOT NULL,
+Position VARCHAR(60) NOT NULL,
+CONSTRAINT PK_Employee PRIMARY KEY(EmployeeID)); 
+
+
+CREATE TABLE On_Duty  (
+  Nurse NUMBER (10)NOT NULL,
+  Floor NUMBER(20)NOT NULL, 
+  Code NUMBER (20) NOT NULL,
+  DutyStart NUMBER(10) NOT NULL,
+  DutyEnd NUMBER(10) NOT NULL,
+  PRIMARY KEY(Nurse, Floor, Code, DutyStart, DutyEnd),
+  CONSTRAINT fk_OnDuty_Nurse_EmployeeID FOREIGN KEY(Nurse) REFERENCES Nurse(EmployeeID),
+  CONSTRAINT fk_OnDuty_Block_Floor FOREIGN KEY(Floor, Code) REFERENCES Block(Floor, Code) 
+);
+
+
+CREATE TABLE Medicine (
+  Code NUMBER(10) PRIMARY KEY NOT NULL,
+  Name VARCHAR(50) NOT NULL,
+  Brand VARCHAR(50) NOT NULL,
+  Description VARCHAR(50) NOT NULL,
+Cost NUMBER(10) NOT NULL);
+
+CREATE TABLE Appointment (
+  AppointmentID NUMBER(10) PRIMARY KEY NOT NULL,
+  Patient NUMBER(10) NOT NULL
+    CONSTRAINT fk_Patient_PatientID REFERENCES Patient(PatientID),
+  Nurse NUMBER(10)
+    CONSTRAINT fk_Nurse_EmployeeID REFERENCES Nurse(EmployeeID),
+  Doctor NUMBER(10) NOT NULL
+    CONSTRAINT fk_Doctor_EmployeeID REFERENCES Doctor(EmployeeID),
+  Begin TIMESTAMP NOT NULL,
+  End TIMESTAMP NOT NULL,
+  ExaminationRoom VARCHAR(15) NOT NULL);
+
+CREATE TABLE Payment (
+  Doctor NUMBER(10) NOT NULL
+    CONSTRAINT fk_EmployeeID REFERENCES Doctor(EmployeeID),
+  Patient NUMBER(10) NOT NULL
+    CONSTRAINT fk_Patient REFERENCES Patient(PatientID),
+  Medicine NUMBER(10) NOT NULL
+    CONSTRAINT fk_Medicine_Code REFERENCES Medicine(Code),
+  PaymentDate TIMESTAMP NOT NULL,
+  Appointment NUMBER(10)
+    CONSTRAINT fk_Appointment_AppointmentID REFERENCES Appointment(AppointmentID),
+  Dose VARCHAR(15) NOT NULL,
+Cost NUMBER(10) NOT NULL,
+  PRIMARY KEY(Doctor, Patient, Medicine, PaymentDate)
+);

@@ -1,0 +1,117 @@
+INSERT INTO Block VALUES(1,1);
+INSERT INTO Block VALUES(1,2);
+INSERT INTO Block VALUES(1,3);
+INSERT INTO Block VALUES(1,4);
+INSERT INTO Block VALUES(2,1);
+INSERT INTO Block VALUES(2,2);
+INSERT INTO Block VALUES(2,3);
+INSERT INTO Block VALUES(2,4);
+
+INSERT INTO Room VALUES(101,'Single',1,1);
+INSERT INTO Room VALUES(102,'Single',1,1);
+INSERT INTO Room VALUES(111,'Single',1,2);
+INSERT INTO Room VALUES(112,'Single',1,2);
+INSERT INTO Room VALUES(121,'Single',1,3);
+INSERT INTO Room VALUES(122,'Single',1,3);
+INSERT INTO Room VALUES(131,'Single',1,4);
+INSERT INTO Room VALUES(132,'Single',1,4);
+INSERT INTO Room VALUES(201,'Single',2,1);
+INSERT INTO Room VALUES(202,'Single',2,1);
+INSERT INTO Room VALUES(211,'Single',2,2);
+INSERT INTO Room VALUES(212,'Single',2,2);
+INSERT INTO Room VALUES(221,'Single',2,3);
+INSERT INTO Room VALUES(222,'Single',2,3);
+INSERT INTO Room VALUES(231,'Single',2,4);
+INSERT INTO Room VALUES(232,'Single',2,4);
+
+
+
+
+
+
+
+
+
+INSERT INTO Patient VALUES(12345,’ Farizal Marlias’,’ Kota Bharu,Kelantan’, 0175225914);
+INSERT INTO Patient VALUES(24117,’ Faiz Subri’,’ Gombak,Selangor’,0196545424); 
+INSERT INTO Patient VALUES(14544,’ Sharul Idlan’ ,’ Shah Alam,Selangor’, 0111544545);
+INSERT INTO Patient VALUES(28281,’ Aedy Ashraf’ ,’ Petaling Jaya,Selangor ’, 0195654545);
+INSERT INTO Patient VALUES(14146,’ Ezaidi Aziz’,’ Alor Setar,Kedah’, 0179566645);
+INSERT INTO Patient VALUES(26656,’ Ikmal Amri’,’ Segamat,Johor’, 0195599545);
+INSERT INTO Patient VALUES(86451,’ Lokman Podolski’,’ Maran,Pahang’, 0175225914);
+INSERT INTO Patient VALUES(54798,’ Aiman Ramdhan’,’ Sungai Buloh,Selangor’, 0185486658);
+INSERT INTO Patient VALUES(28848,’ Syazrul Hakim’,’ Kuching,Sarawak’, 0175645245);
+INSERT INTO Patient VALUES(94466,’ Haziq Bustaman’,’ Temerloh,Pahang’, 0139432345);
+
+INSERT INTO Stay VALUES(12345,132,'02-May-18','03-May-18');
+INSERT INTO Stay VALUES(24117,201,'05-June-18','10-June-18');
+INSERT INTO Stay VALUES(14544,202,'07-July-18','20-July-18');
+INSERT INTO Stay VALUES(28281,101,'10-July-18','15-July-18');
+INSERT INTO Stay VALUES(14146,122,'13-July-18','18-July-18');
+
+INSERT INTO Doctor VALUES(01,’Samad Said’,’ Abdominal Radiology’);
+INSERT INTO Doctor VALUES(02,’ Erin Malek’,’ Addiction Psychiatry’);
+INSERT INTO Doctor VALUES(03,’ Syamsul Yusof’,’ Cardiothoracic Anesthesiology’);
+INSERT INTO Doctor VALUES(04,’ Nora Danish’,’ Reconstructive Orthopaedics’);
+INSERT INTO Doctor VALUES(05,’ Mike Tysan’,’ Heart Failure’);
+INSERT INTO Doctor VALUES(06,’ Fazura Aziz’,’ Allergy ’);
+INSERT INTO Doctor VALUES(07,’ Ikram Dinzly’,’ Anesthesiology’);
+INSERT INTO Doctor VALUES(08,’ Mashitah Mahmud’,’ Child Neurology’);
+INSERT INTO Doctor VALUES(09,’ Azura Ali’,’ Clinical Neurophysiology ’);
+INSERT INTO Doctor VALUES(10,’ Danisa Ahmad’,’ Orthopaedic Trauma’);
+
+
+INSERT INTO Department VALUES(01, 'Chaplaincy' , 21);
+INSERT INTO Department VALUES(02,' Critical care ', 45);
+INSERT INTO Department VALUES(03,' Diagnostic imaging ', 26);
+INSERT INTO Department VALUES(04,' Discharge lounge ', 32);
+INSERT INTO Department VALUES(05,' Gastroenterology ', 12);
+INSERT INTO Department VALUES(06,'General surgery', 45);
+ INSERT INTO Department VALUES(07,' Gynaecology ', 23);
+INSERT INTO Department VALUES(08,' Haematology ', 34);
+INSERT INTO Department VALUES(09,'Maternity departments', 35);
+ INSERT INTO Department VALUES(10,'Neonatal unit', 45);
+
+INSERT INTO Nurse VALUES(1111,’Azura Ahmid’,’General Nurse Practitioner’);
+INSERT INTO Nurse VALUES(2222,’Siti Hawa Kamal’,’Pain Management Nurse’);
+INSERT INTO Nurse VALUES(3333,’Zahid Omar’,’Certified Registered Nurse Anesthetist’);
+INSERT INTO Nurse VALUES(4444,’Najib Razak’,’Certified Registered Nurse Anesthetist’);
+INSERT INTO Nurse VALUES(5555,’ Kamarul Zaman’,’Psychiatric Nurse Practitioner’);
+INSERT INTO Nurse VALUES(6666,’ Sofia Jeniffer Abu Bakar’,’Pain Management Nurse’);
+INSERT INTO Nurse VALUES(7777,’ Aris Ariwatan’,’Pain Management Nurse’);
+INSERT INTO Nurse VALUES(8888,’ Maria Mukhsin’,’Psychiatric Nurse Practitioner’);
+INSERT INTO Nurse VALUES(9999,’ Zahidah Ariff’,’General Nurse Practitioner’);
+INSERT INTO Nurse VALUES(1010,’ Nurhayani Abdullah’,’General Nurse Practitioner’);
+
+INSERT INTO On_Duty VALUES(2222 ,1,4,2100,0500);
+INSERT INTO On_Duty VALUES(5555,2,1,0800,1800);
+INSERT INTO On_Duty VALUES(7777,2,1,1800,0500);
+INSERT INTO On_Duty VALUES(1010,1,1,0500,1800);
+INSERT INTO On_Duty VALUES(3333,1,3,1900,0600);
+
+
+
+
+INSERT INTO Medicine VALUES(1, 'Cafergot', 'Nova Industries', 'Null',200);
+INSERT INTO Medicine VALUES(2, 'Bactroban', 'AR Labs', 'Null',300);
+INSERT INTO Medicine VALUES(3, 'Augmentin', 'AR Labs', 'Null',250);
+INSERT INTO Medicine VALUES(4, 'Anafranil', 'Far Laboratories', 'Null',270);
+INSERT INTO Medicine VALUES(5, 'Demadex', 'Far Laboratories', 'Null',800);
+INSERT INTO Medicine VALUES(6, 'Demerol', 'Far Laboratories', 'Null',500);
+INSERT INTO Medicine VALUES(7, 'Fiorinal', 'Far Laboratories', 'Null',650);
+
+INSERT INTO Appointment VALUES(13216584, 28848, 1111, 01,  '03-May-18 10:00:00', '03-May-18 11:00:00', 'A');
+INSERT INTO Appointment VALUES(26548913, 94466, 2222, 02,  '03-May-18 10:00:00', '03-May-18 11:00:00', 'B');
+INSERT INTO Appointment VALUES(36549879, 12345, 3333, 01,  '04-May-18 10:00:00', '04-May-18 11:00:00', 'A');
+INSERT INTO Appointment VALUES(46846589, 14146, 4444, 02,  '04-May-18 10:00:00', '04-May-18 11:00:00', 'B');
+INSERT INTO Appointment VALUES(59871321, 86451, 5555, 05,  '05-May-18 10:00:00', '05-May-18 11:00:00', 'C');
+INSERT INTO Appointment VALUES(69879231, 26656, 6666, 05,  '05-May-18 11:00:00', '05-May-18 12:00:00', 'C');
+INSERT INTO Appointment VALUES(76983231, 14544, 7777, 05,  '05-May-18 12:00:00', '05-May-18 12:30:00', 'C');
+INSERT INTO Appointment VALUES(86213939, 28281, 8888, 04,  '06-May-18 10:00:00', '06-May-18 11:00:00', 'A');
+
+
+INSERT INTO Payment VALUES(05, 86451, 2, '03-May-18 10:47:00', 59871321, '12',300);
+INSERT INTO Payment VALUES(05, 26656, 2, '04-May-18 10:53:00', 69879231, '10',300);
+INSERT INTO Payment VALUES(04, 28281, 3, '05-May-18 12:53:00', NULL, '6',250);
+
+
